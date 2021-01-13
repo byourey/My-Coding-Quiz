@@ -1,4 +1,4 @@
-#btn-start button {
+#btn_start {
     position: absolute;
     bottom: 50%;
     left: 45%;
@@ -7,28 +7,43 @@
     background-color: grey;
     color: white;
     padding: 20px;
+    border-radius: 5px;
 }
 
-p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    text-align: center;
-    top: 30%;
-    left: 35%;
-    position: absolute;
-}
-
-h1 {
-    text-align: center;
-    top:20%;
-    left: 45%;
-    position: absolute;
-}
-
-.time {
+#time-left {
     position:absolute;
     right: 100px;
     font-size: 20px;
     top: 10%;
 }
+
+.container {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.hide {
+    display: none;
+}
+
+.optionBox {
+    display: grid;
+    margin: 20px 0;
+    grid-gap: 10px;
+    text-align: center;
+
+}
+
+.optionBox span {
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 10px 10px;
+    width: 15%;
+}
+
+
+
+
+
+
 

@@ -4,61 +4,57 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>MY JS Quiz</title>
+        <title>MY Coding Quiz</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
-        <h1>Coding Quiz Time</h1>
-        <p>Ready to start your Coding quiz? Press the start button to contine!</p>
-               
+       
 
-        <!-- Starting the quiz -->
-        <div id="btn-start" class="hide"><button>Start Quiz</button></div>
+       <!-- Starting Quiz Section -->
+       <div class="container">
+           <div id="question-container">
+           <h2>Rule Section</h2>
+           <h4>You have 60 seconds to complete this quiz</h4>
+           <h4>For every incorrect answer 15 seconds will be deducted from the timer</h4>
+           </div>
+           <button id="btn_start">Start Quiz</button>
+             
+                     
+       </div>
 
      
 
 
+    <!-- Questions Box -->
+    <div id="questionBox" class="hide">
+        <h3>1.What does HTML stand for?</h3>    
+        <div class="optionBox">
+        <span>Hypher Text Making Language</span>
+        <span>Hyper Text Markup Language</span>
+        <span>Hyper Text Making Language</span>
+        <span>Hyper Text Mark Language</span>
         </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer>
+        <button id="next_button" class="hide">Next Question</button>
+    </footer>
 
-    <!-- Quiz Box -->
-    <div class="Box">
+
+
+
         
         <!-- Timer for the quiz -->
-        <div class="timer">
-            <div class="time">Time:60</div>
+        <div id="timerCount">
+            <!-- <h3>Seconds left: <span id="time-left">10</span></h3> -->
+            <div id="time-left" class="hide">Time Left:60</div>
         </div>
 
-        <section>
-            <div class="ques">
-                <span>What does CSS stand for?</span>
-            </div>
-            <div class="options">
-                <div class="choices">
-                    <form id="Answer Choices">
-                        <input type="checkbox" id="Uppercase" name="Uppercase" value="Uppercase">
-                        <label for="box1"> CSS</label><br>
-                        <input type="checkbox" id="Lowercase" name="Lowercase" value="Lowercase">
-                        <label for="box2"> CSS</label><br>
-                        <input type="checkbox" id="Numbers" name="Numbers" value="Numbers">
-                        <label for="box3"> CSS</label><br>
-                        <input type="checkbox" id="SpecialCharacters" name="Special Characters" value="Special Characters">
-                        <label for="box4"> CSS<br><br>            
-                    </form>
-            
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-        <!-- Footer Section -->
-        <footer>
-            <button class="next_button">Next Question</button>
-        </footer>
-
+        
 
 
         

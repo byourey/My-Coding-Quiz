@@ -28,33 +28,35 @@ let allQuestions = [
         'body={color:blue}',
         'body:color:blue}',
         ],
-        answer: 2,
+        answer: 1,
     },
     {
         question: 'What is 22 + 2?',
         option:[
         '2',
         '3',
-        '4',
+        '44',
         '10',
         ],
-        answer: 2,
+        answer: 3,
     },
     {
         question: 'What is 222 + 2?',
         option:[
         '2',
         '3',
-        '4',
+        '224',
         '10',
         ],
-        answer: 2,
+        answer: 3,
     }
 ]
 
 const questionContainerElement = document.getElementById('question-container')
 const questionBoxElement = document.querySelector('#questionBox')
 let index = 0;
+let score = 0;
+let wrong = 0;
 let quest = allQuestions.sort(function(){
 return 0.5 - Math.random();
 })
@@ -103,5 +105,40 @@ function startQuestions(i) {
      $(".optionBox btn").eq(2).text(quest[i].option[2]);
      $(".optionBox btn").eq(3).text(quest[i].option[3]);
 }
+
+// Created function to check answers
+function checkAnswer(option) {
+    let optionClicked = $(option).data("opt");
+    console.log(quest[index]);
+
+    if(optionClicked == quest[index].answer) {
+        $(option).addClass("correct");
+        score++;
+    }
+    else {
+        $(option).addClass("wrong");
+        wrong++;
+
+    }
+
+    $(".optionBox span").attr("onclick", "");
+
+}
+
+// Function to show the next question
+function showNext() {
+
+    if (index >= (quest.length - 1) ) {
+        showResult();
+        return;    
+    }
+     index++;
+
+     $(".optionBox span").attr("onclick", "checkAnswer(this)");
+
+     startQuestions(index);
+}
+
+// Function show result
 
 

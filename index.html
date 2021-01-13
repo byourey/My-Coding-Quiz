@@ -33,16 +33,16 @@
     <div id="questionBox" class="hide">
         <h3>1.What does HTML stand for?</h3>    
         <div class="optionBox">
-        <button class="btn">Hypher Text Making Language</button>
-        <button class="btn">Hyper Text Markup Language</button>
-        <button class="btn">Hyper Text Making Language</button>
-        <button class="btn">Hyper Text Mark Language</button>
+        <span onclick="checkAnswer(this)" data-opt="1">Hypher Text Making Language</span>
+        <span onclick="checkAnswer(this)"data-opt="2">Hyper Text Markup Language</span>
+        <span onclick="checkAnswer(this)"data-opt="3">Hyper Text Making Language</span>
+        <span onclick="checkAnswer(this)"data-opt="4">Hyper Text Mark Language</span>
         </div>
     </div>
     
     <!-- Footer Section -->
     <footer>
-        <button id="next_button" class="hide">Next Question</button>
+        <button onclick="showNext()" id="next_button" class="hide">Next Question</button>
     </footer>
 
 

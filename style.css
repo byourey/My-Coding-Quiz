@@ -34,7 +34,7 @@
 
 }
 
-.optionBox button {
+.optionBox span {
     border-radius: 10px;
     border: 1px solid;
     padding: 10px 10px;
@@ -44,17 +44,16 @@
     font-weight: bold;
 }
 
-.btn.correct {
-    --hue: var(--hue-correct);
-    background-color:lightgreen;
+.optionBox span correct {
+    background-color: #00ab00;
     color: white;
 }
 
-.btn.wrong {
-    --hue: var(--hue-wrong);
-    background-color:red;
+.optionBox span wrong {
+    background-color: #ff3b0e;
     color: white;
 }
+
 
 #next_button {
     padding: 10px;

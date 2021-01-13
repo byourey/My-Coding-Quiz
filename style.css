@@ -34,11 +34,34 @@
 
 }
 
-.optionBox span {
+.optionBox button {
     border-radius: 10px;
     border: 1px solid;
     padding: 10px 10px;
     width: 15%;
+    background-color:lightgray;
+    color: black;
+    font-weight: bold;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    background-color:lightgreen;
+    color: white;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    background-color:red;
+    color: white;
+}
+
+#next_button {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #1da3dd;  
+    color: white;
 }
 
 

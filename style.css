@@ -1,8 +1,8 @@
 #btn_start {
     position: absolute;
-    bottom: 50%;
+    bottom: 35%;
     left: 45%;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     background-color: grey;
     color: white;
@@ -34,6 +34,14 @@
 
 }
 
+h5 {
+font-size: 15px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
 .choiceBox span {
     border-radius: 10px;
     border: 1px solid;
@@ -44,12 +52,12 @@
     font-weight: bold;
 }
 
-.choiceBox span correct {
+.choiceBox span.correct {
     background-color: #00ab00;
     color: white;
 }
 
-.choiceBox span wrong {
+.choiceBox span.wrong {
     background-color: #ff3b0e;
     color: white;
 }

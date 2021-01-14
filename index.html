@@ -18,8 +18,11 @@
        <div class="container">
            <div id="question-container">
            <h2>Rules for the Quiz</h2>
-           <h4>You have 60 seconds to complete this quiz</h4>
-           <h4>For every incorrect answer 15 seconds will be deducted from the timer</h4>
+           <h5>You have 60 seconds to complete this quiz</h5>
+           <h5>For every incorrect answer 15 seconds will be deducted from the timer</h5>
+           <h5>If you choose the wrong answer, the button will light up in red</h5>
+           <h5>If you choose the right answer, the button will light up in green</h5>
+           
            </div>
            <button id="btn_start">Start Quiz</button>
              
@@ -33,10 +36,10 @@
     <div id="questionBox" class="hide">
         <h4>1.What does HTML stand for?</h4> 
         <div class="choiceBox">
-        <span onclick="checkAnswer(this)" data-opt="1">Hypher Text Making Language</span>
-        <span onclick="checkAnswer(this)"data-opt="2">Hyper Text Markup Language</span>
-        <span onclick="checkAnswer(this)"data-opt="3">Hyper Text Making Language</span>
-        <span onclick="checkAnswer(this)"data-opt="4">Hyper Text Mark Language</span>
+        <span onclick="checkAnswer(this)" data-opt="1"></span>
+        <span onclick="checkAnswer(this)" data-opt="2"></span>
+        <span onclick="checkAnswer(this)" data-opt="3"></span>
+        <span onclick="checkAnswer(this)" data-opt="4"></span>
         </div>
     </div>
     
@@ -49,19 +52,22 @@
         <!-- Timer for the quiz -->
         <div id="timerCount">
             <!-- <h3>Seconds left: <span id="time-left">10</span></h3> -->
-            <div id="time-left" class="hide">Time Left:60</div>
+            <div id="time-left" class="hide">Time Left:10</div>
         </div>
 
         <!-- Box to show the score -->
-        <label class="hide">Your Score</label>
-          <input type = "text" id = "myText" class="hide" value = "number"/>
-          <button class="hide">Submit</button> 
+      <div class="results">
+        <label id="lab" class="hide">Your Score:</label><br><br>
+          <input type = "text" id = "myText" class="hide"/>
+          <button id="but" class="hide">Submit</button> 
           <br><br>
+      </div>
 
-          <h3 class="hide">High Scores</h3>
+          <h3 id="HS" class="hide">High Scores</h3>
+          <p></p>
           
-          <button class="hide">Go Back</button>  
-          <button class="hide">Clear HighScores</button>  
+          <button id="gob" class="hide">Go Back</button>  
+          <button id="cl" class="hide">Clear HighScores</button>  
 
 
         

@@ -26,7 +26,7 @@
     display: none;
 }
 
-.optionBox {
+.choiceBox {
     display: grid;
     margin: 20px 0;
     grid-gap: 10px;
@@ -34,7 +34,7 @@
 
 }
 
-.optionBox span {
+.choiceBox span {
     border-radius: 10px;
     border: 1px solid;
     padding: 10px 10px;
@@ -44,12 +44,12 @@
     font-weight: bold;
 }
 
-.optionBox span correct {
+.choiceBox span correct {
     background-color: #00ab00;
     color: white;
 }
 
-.optionBox span wrong {
+.choiceBox span wrong {
     background-color: #ff3b0e;
     color: white;
 }

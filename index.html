@@ -31,8 +31,8 @@
 
     <!-- Questions Box -->
     <div id="questionBox" class="hide">
-        <h3>1.What does HTML stand for?</h3>    
-        <div class="optionBox">
+        <h4>1.What does HTML stand for?</h4> 
+        <div class="choiceBox">
         <span onclick="checkAnswer(this)" data-opt="1">Hypher Text Making Language</span>
         <span onclick="checkAnswer(this)"data-opt="2">Hyper Text Markup Language</span>
         <span onclick="checkAnswer(this)"data-opt="3">Hyper Text Making Language</span>
@@ -45,9 +45,6 @@
         <button onclick="showNext()" id="next_button" class="hide">Next Question</button>
     </footer>
 
-
-
-
         
         <!-- Timer for the quiz -->
         <div id="timerCount">
@@ -55,7 +52,16 @@
             <div id="time-left" class="hide">Time Left:60</div>
         </div>
 
-        
+        <!-- Box to show the score -->
+        <label class="hide">Your Score</label>
+          <input type = "text" id = "myText" class="hide" value = "number"/>
+          <button class="hide">Submit</button> 
+          <br><br>
+
+          <h3 class="hide">High Scores</h3>
+          
+          <button class="hide">Go Back</button>  
+          <button class="hide">Clear HighScores</button>  
 
 
         

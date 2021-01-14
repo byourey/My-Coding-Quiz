@@ -1,8 +1,18 @@
 
 let allQuestions = [
     {
-        question:'What does CSS stand for?',
+        question: '1.What does HTML stand for?',
         option: [
+            'Hypher Text Making Language',
+            'Hyper Text Markup Language',
+            'Hyper Text Making Language',
+            'Hyper Text Mark Language',
+        ],
+        answer: 2,
+    },
+    {
+       question: '2.What does CSS stand for?',
+       option: [
         'Common Solution Sheet',
         'Cascading Style Sheet',
         'Cascading Solution Style',
@@ -11,7 +21,7 @@ let allQuestions = [
         answer: 2,
     },
     {
-        question: 'Which HTML tag is used to define an internal style sheet?',
+        question: '3.Which HTML tag is used to define an internal style sheet?',
         option: [
         '<script>',
         '<style>',
@@ -21,7 +31,7 @@ let allQuestions = [
         answer: 2,
     },
     {
-        question: 'Which is the correct CSS syntax?',
+        question: '4.Which is the correct CSS syntax?',
         option: [
         'body{color:blue}',
         '{body{color:blue}',
@@ -31,7 +41,7 @@ let allQuestions = [
         answer: 1,
     },
     {
-        question: 'What is 22 + 2?',
+        question: '5.What is 22 + 2?',
         option:[
         '2',
         '3',
@@ -41,7 +51,7 @@ let allQuestions = [
         answer: 3,
     },
     {
-        question: 'What is 222 + 2?',
+        question: '6.What is 222 + 2?',
         option:[
         '2',
         '3',
@@ -66,6 +76,7 @@ return 0.5 - Math.random();
 const timeLeftDisplay = document.querySelector('#time-left')
 const startBtn = document.querySelector('#btn_start')
 const nextBtn = document.querySelector('#next_button')
+const scoreBtn = document.querySelector('myText')
 
 let timeLeft = 60
 
@@ -91,6 +102,8 @@ function startQuiz() {
     nextBtn.classList.remove("hide")
     questionContainerElement.classList.add("hide")
     questionBoxElement.classList.remove("hide")
+    scoreBtn.classList.remove("hide")
+
 }
 
 // nextBtn.addEventListener("click", function(){
@@ -100,10 +113,10 @@ startQuestions(index);
 // Created a function to start the questions
 function startQuestions(i) {
      $(".questionBox").text(quest[i].question);
-     $(".optionBox btn").eq(0).text(quest[i].option[0]);
-     $(".optionBox btn").eq(1).text(quest[i].option[1]);
-     $(".optionBox btn").eq(2).text(quest[i].option[2]);
-     $(".optionBox btn").eq(3).text(quest[i].option[3]);
+     $(".choiceBox btn").eq(0).text(quest[i].option[0]);
+     $(".choiceBox btn").eq(1).text(quest[i].option[1]);
+     $(".choiceBox btn").eq(2).text(quest[i].option[2]);
+     $(".choiceBox btn").eq(3).text(quest[i].option[3]);
 }
 
 // Created function to check answers
@@ -121,7 +134,7 @@ function checkAnswer(option) {
 
     }
 
-    $(".optionBox span").attr("onclick", "");
+    $(".choiceBox span").attr("onclick", "");
 
 }
 
@@ -134,11 +147,15 @@ function showNext() {
     }
      index++;
 
-     $(".optionBox span").attr("onclick", "checkAnswer(this)");
+     $(".choiceBox span").attr("onclick", "checkAnswer(this)");
 
      startQuestions(index);
 }
 
 // Function show result
+function showResult() {
+    questionBoxElement.classList.add("hide")
+    scoreBtn.classList.remove("hide")
 
+}
 

@@ -103,6 +103,7 @@ const texBtn = document.querySelector('#myText')
 const h3Btn = document.querySelector('#HS')
 const goBtn = document.querySelector('#gob')
 const clBtn = document.querySelector('#highsc')
+const userIn = document.querySelector('#name')
 // const endBtn = document.querySelector('#endgame')
 
 
@@ -140,7 +141,10 @@ timeLeftDisplay.addEventListener("click", stopQuiz)
 
 
 // added event listener for the go backbutton
-// goBtn.addEventListener("click", endQuiz)
+goBtn.addEventListener("click", endQuiz)
+
+// added event listener to show initials submitted earlier
+subBtn.addEventListener("click", formdata)
 
 // added event listener for the clear highscoresbutton
 // clBtn.addEventListener("click", empty())
@@ -156,6 +160,7 @@ function startQuiz() {
     labBoxElement.classList.add("hide")
     texBtn.classList.add("hide")
     clBtn.classList.add("hide")
+    userIn.classList.add("hide")
 }
 
 // nextBtn.addEventListener("click", function(){
@@ -221,6 +226,8 @@ function showResult() {
     subBtn.classList.remove("hide")
     labBoxElement.classList.remove("hide")
     texBtn.classList.remove("hide")
+    userIn.classList.remove("hide")
+
 }
 
 // Function when timeLeft is 0 and show the result page
@@ -229,6 +236,8 @@ function stopQuiz() {
     questionBoxElement.classList.add("hide")
     subBtn.classList.remove("hide")
     labBoxElement.classList.remove("hide")
+    userIn.classList.remove("hide")
+
 }
 
 // Function to show Highscores after clicking submit button
@@ -236,6 +245,7 @@ function endResult() {
     labBoxElement.classList.add("hide")
     texBtn.classList.add("hide")
     subBtn.classList.add("hide")
+    userIn.classList.add("hide")
     h3Btn.classList.remove("hide")
     goBtn.classList.remove("hide")
     clBtn.classList.remove("hide")    
@@ -260,17 +270,29 @@ localStorage.setItem("My Initials", JSON.stringify(userInitials));
 // Added event listener after user enters initials
 document.getElementById('but').addEventListener("click", saveInitials)
 
-// function saveInitials() {
-
-// }
-
 
 // Function to start the quiz again when clicking the go back button
 
-// function endQuiz() {
- 
+function endQuiz() {
+ questionBoxElement.classList.remove("hide")
+ labBoxElement.classList.add("hide")
+ texBtn.classList.add("hide")
+ subBtn.classList.add("hide")
+ userIn.classList.add("hide")
+ h3Btn.classList.add("hide")
+ goBtn.classList.add("hide")
+ clBtn.classList.add("hide")
+ timeLeftDisplay.classList.remove("hide")
+}
 
-// }
+// Function to display the initials which was submitted earlier
+function formdata() 
+{
+var firstname1= document.getElementById("myText").value;
+document.writeln("<h1>Confirmation Page</h1><br>");
+document.writeln("" + firstname1 + "<br>");
+}
+
 
 
 // go back button when clicked to take me to main screen

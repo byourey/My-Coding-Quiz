@@ -45,9 +45,8 @@ h2 {
     text-align: center;
 }
 
-h3 {
+.showScores {
     text-align: center;
-    font-size: 20px;
 }
 
 .choiceBox span {

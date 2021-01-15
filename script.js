@@ -144,7 +144,7 @@ timeLeftDisplay.addEventListener("click", stopQuiz)
 goBtn.addEventListener("click", endQuiz)
 
 // added event listener to show initials submitted earlier
-subBtn.addEventListener("click", formdata)
+// subBtn.addEventListener("click", formdata)
 
 // added event listener for the clear highscoresbutton
 // clBtn.addEventListener("click", empty())
@@ -286,12 +286,12 @@ function endQuiz() {
 }
 
 // Function to display the initials which was submitted earlier
-function formdata() 
-{
-var firstname1= document.getElementById("myText").value;
-document.writeln("<h1>Confirmation Page</h1><br>");
-document.writeln("" + firstname1 + "<br>");
-}
+// function formdata() 
+// {
+// var firstname1= document.getElementById("myText").value;
+// document.writeln("<h1>Confirmation Page</h1><br>");
+// document.writeln("" + firstname1 + "<br>");
+// }
 
 
 

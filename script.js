@@ -262,6 +262,8 @@ userInitials.push(initials);
 
 // Saving to local storage
 localStorage.setItem("My Initials", JSON.stringify(userInitials));
+window.localStorage.getItem('My Initials')
+JSON.parse(window.localStorage.getItem('My Initials'))
 }
 
 // Added event listener after user enters initials
@@ -269,11 +271,21 @@ document.getElementById('but').addEventListener("click", saveInitials)
 
 
 // Function to display the initials which was submitted earlier
-// function formdata() 
-// {
+// function formdata() {
 // var firstname1= document.getElementById("myText").value;
 // document.writeln("<h1>Confirmation Page</h1><br>");
 // document.writeln("" + firstname1 + "<br>");
+// }
+
+window.localStorage.getItem('save');
+JSON.parse(window.localStorage.getItem('My Initials'));
+
+
+
+// Function to remove the highscores which was displayed
+// function myFunction() {
+//     var myobj = document.getElementById('highsc')
+//     myobj.remove();
 // }
 
 

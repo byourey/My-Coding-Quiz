@@ -31,7 +31,6 @@
     margin: 20px 0;
     grid-gap: 10px;
     text-align: center;
-
 }
 
 h5 {
@@ -40,6 +39,15 @@ font-size: 15px;
 
 h2 {
     font-size: 35px;
+}
+
+.results {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: 20px;
 }
 
 .choiceBox span {

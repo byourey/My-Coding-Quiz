@@ -1,6 +1,6 @@
 let allQuestions = [
     {
-        question: '1.What does HTML stand for?',
+        question: 'What does HTML stand for?',
         option: [
             'Hypher Text Making Language',
             'Hyper Text Markup Language',
@@ -10,7 +10,7 @@ let allQuestions = [
         answer: 2,
     },
     {
-       question: '2.What does CSS stand for?',
+       question: 'What does CSS stand for?',
        option: [
         'Common Solution Sheet',
         'Cascading Style Sheet',
@@ -20,7 +20,7 @@ let allQuestions = [
         answer: 2,
     },
     {
-        question: '3.Which HTML tag is used to define an internal style sheet?',
+        question: 'Which HTML tag is used to define an internal style sheet?',
         option: [
         '<script>',
         '<style>',
@@ -30,7 +30,7 @@ let allQuestions = [
         answer: 2,
     },
     {
-        question: '4.Which is the correct CSS syntax?',
+        question: 'Which is the correct CSS syntax?',
         option: [
         'body{color:blue}',
         '{body{color:blue}',
@@ -40,7 +40,7 @@ let allQuestions = [
         answer: 1,
     },
     {
-        question: '5Wwhere should css file be referenced in a HTML file?',
+        question: 'Where should css file be referenced in a HTML file?',
         option:[
         'Inside the head section',
         'Inside the body section',
@@ -50,7 +50,7 @@ let allQuestions = [
         answer: 1,
     },
     {
-        question: '6.What is the HTML tag to make text bold?',
+        question: 'What is the HTML tag to make text bold?',
         option:[
         '<b>',
         '<bold>',
@@ -60,7 +60,7 @@ let allQuestions = [
         answer: 1,
     },
     {
-        question: '7.What is 10 + 2?',
+        question: 'What is 10 + 2?',
         option:[
         '12',
         '3',
@@ -71,7 +71,7 @@ let allQuestions = [
     
     },
     {
-        question: '8.What is 222 * 2?',
+        question: 'What is 222 * 2?',
         option:[
         '2',
         '444',
@@ -86,7 +86,6 @@ let allQuestions = [
 
 let index = 0;
 let score = 0;
-let wrong = 0;
 let quest = allQuestions.sort(function(){
 return 0.5 - Math.random();
 });
@@ -96,7 +95,6 @@ return 0.5 - Math.random();
 const timeLeftDisplay = document.querySelector('#time-left')
 const startBtn = document.querySelector('#btn_start')
 const nextBtn = document.querySelector('#next_button')
-const scoreBtn = document.querySelector('myText')
 const questionContainerElement = document.getElementById('question-container')
 const questionBoxElement = document.querySelector('#questionBox')
 const labBoxElement = document.querySelector('#lab')
@@ -104,25 +102,32 @@ const subBtn = document.querySelector('#but')
 const texBtn = document.querySelector('#myText')
 const h3Btn = document.querySelector('#HS')
 const goBtn = document.querySelector('#gob')
-const clBtn = document.querySelector('#cl')
+const clBtn = document.querySelector('#highsc')
+// const endBtn = document.querySelector('#endgame')
+
+
+var qust = document.getElementById('con')
 
 
 // Added a timer for the quiz
-let timeLeft = 10
+let timeLeft = 25
 
 // Function get the timer to work
 function timeout() {
     setInterval(function(){
-     if(timeLeft <=1 ) {
+     if(timeLeft <=0 ) {
         showResult();
-        clearInterval(timeLeft = 1)
+        clearInterval(timeLeft = 0)
      }
      timeLeftDisplay.innerHTML = timeLeft   
-     timeLeft -=1
+     timeLeft -=1;
     }, 1000)
    
 }
+
+
 startBtn.addEventListener("click", timeout)
+
 
 // Added event listener for the start quiz button
 startBtn.addEventListener("click", startQuiz)
@@ -130,8 +135,13 @@ startBtn.addEventListener("click", startQuiz)
 // Added event listener for the submitbutton
 subBtn.addEventListener("click", endResult)
 
+// Added event listener for the stopquiz
+timeLeftDisplay.addEventListener("click", stopQuiz)
+
+
+
 // added event listener for the go backbutton
-goBtn.addEventListener("click", startQuiz)
+// goBtn.addEventListener("click", endQuiz)
 
 // added event listener for the clear highscoresbutton
 // clBtn.addEventListener("click", empty())
@@ -153,9 +163,12 @@ function startQuiz() {
 
 startQuestions(index);
 
+
 // Created a function to start the questions
-function startQuestions(i) {
-     $(".questionBox").text(quest[i].question);
+function startQuestions(i) {    
+    
+    $(".con").text(quest[i].question);
+    $(".questionBox").text(quest[i].question);
      $(".choiceBox span").eq(0).text(quest[i].option[0]);
      $(".choiceBox span").eq(1).text(quest[i].option[1]);
      $(".choiceBox span").eq(2).text(quest[i].option[2]);
@@ -165,21 +178,23 @@ function startQuestions(i) {
 // Created function to check answers
 function checkAnswer(option) {
     let optionClicked = $(option).data("opt");
-    console.log(quest[index]);
+    // console.log(quest[index]);
 
     if(optionClicked == quest[index].answer) {
         $(option).addClass("correct");
-        score++;
+        score+=5;
     }
     else {
         $(option).addClass("wrong");
-        wrong++;
-
+         timeLeft = timeLeft - 5;
     }
 
-    $(".choiceBox span").attr("onclick", "");
+    $(".results span").text(score);
 
+    $(".choiceBox span").attr("onclick", "");
 }
+
+
 
 // Function to show the next question
 function showNext() {
@@ -218,11 +233,31 @@ function endResult() {
     labBoxElement.classList.add("hide")
 }
 
+// Function when timeLeft is 0 and show the result page
+function stopQuiz() {
+    timeLeft === 0;
+    questionBoxElement.classList.add("hide")
+    subBtn.classList.remove("hide")
+    labBoxElement.classList.remove("hide")
+
+}
+
 
 // Function to start the quiz again when clicking the go back button
-goBtn.classList.add("hide")
-clBtn.classList.remove("hide")
-h3Btn.classList.add("hide")
+
+// function endQuiz() {
+ 
+
+// }
+
+
+// when time stops at 0 i should not be able to continue the startQuiz
+// when wrong answer is chosen minus tim
+// score to be updated when right answer is chosen
+// go back button when clicked to take me to main screen
+// clear high scores to remove the score
+
+
 
 
 

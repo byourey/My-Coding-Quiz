@@ -139,7 +139,6 @@ subBtn.addEventListener("click", endResult)
 timeLeftDisplay.addEventListener("click", stopQuiz)
 
 
-
 // added event listener for the go backbutton
 // goBtn.addEventListener("click", endQuiz)
 
@@ -197,7 +196,7 @@ function checkAnswer(option) {
 }
 
 
-// Function to show the next question
+// Function for the next question button clicked
 function showNext() {
 
     if (index >= (quest.length - 1) ) {
@@ -215,7 +214,7 @@ function showNext() {
      startQuestions(index);
 }
 
-// Function show result
+// Function show result after quiz is over
 function showResult() {
     questionBoxElement.classList.add("hide")
     nextBtn.classList.add("hide")
@@ -224,24 +223,46 @@ function showResult() {
     texBtn.classList.remove("hide")
 }
 
-// Function to show Highscores after clicking submit button
-function endResult() {
-    texBtn.classList.add("hide")
-    subBtn.classList.add("hide")
-    h3Btn.classList.remove("hide")
-    goBtn.classList.remove("hide")
-    clBtn.classList.remove("hide")
-    labBoxElement.classList.add("hide")
-}
-
 // Function when timeLeft is 0 and show the result page
 function stopQuiz() {
     timeLeft === 0;
     questionBoxElement.classList.add("hide")
     subBtn.classList.remove("hide")
     labBoxElement.classList.remove("hide")
-
 }
+
+// Function to show Highscores after clicking submit button
+function endResult() {
+    labBoxElement.classList.add("hide")
+    texBtn.classList.add("hide")
+    subBtn.classList.add("hide")
+    h3Btn.classList.remove("hide")
+    goBtn.classList.remove("hide")
+    clBtn.classList.remove("hide")    
+}
+
+// Function save initials when user inputs them
+
+let userInitials = [];
+
+const saveInitials = (ev)=> {
+    ev.preventDefault();
+    let initials = {
+        myText: document.getElementById('myText').value
+    }
+
+userInitials.push(initials);
+
+// Saving to local storage
+localStorage.setItem("My Initials", JSON.stringify(userInitials));
+}
+
+// Added event listener after user enters initials
+document.getElementById('but').addEventListener("click", saveInitials)
+
+// function saveInitials() {
+
+// }
 
 
 // Function to start the quiz again when clicking the go back button
@@ -254,6 +275,7 @@ function stopQuiz() {
 
 // go back button when clicked to take me to main screen
 // clear high scores to remove the score
+// high scores to display the initials which was entered at the score section
 
 
 

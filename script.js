@@ -141,7 +141,9 @@ timeLeftDisplay.addEventListener("click", stopQuiz)
 
 
 // added event listener for the go backbutton
-goBtn.addEventListener("click", endQuiz)
+goBtn.addEventListener("click", function() {
+
+})
 
 // added event listener to show initials submitted earlier
 // subBtn.addEventListener("click", formdata)
@@ -273,17 +275,17 @@ document.getElementById('but').addEventListener("click", saveInitials)
 
 // Function to start the quiz again when clicking the go back button
 
-function endQuiz() {
- questionBoxElement.classList.remove("hide")
- labBoxElement.classList.add("hide")
- texBtn.classList.add("hide")
- subBtn.classList.add("hide")
- userIn.classList.add("hide")
- h3Btn.classList.add("hide")
- goBtn.classList.add("hide")
- clBtn.classList.add("hide")
- timeLeftDisplay.classList.remove("hide")
-}
+// function endQuiz() {
+//  questionBoxElement.classList.remove("hide")
+//  labBoxElement.classList.add("hide")
+//  texBtn.classList.add("hide")
+//  subBtn.classList.add("hide")
+//  userIn.classList.add("hide")
+//  h3Btn.classList.add("hide")
+//  goBtn.classList.add("hide")
+//  clBtn.classList.add("hide")
+//  timeLeftDisplay.classList.remove("hide")
+// }
 
 // Function to display the initials which was submitted earlier
 // function formdata() 

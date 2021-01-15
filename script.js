@@ -180,20 +180,21 @@ function checkAnswer(option) {
     let optionClicked = $(option).data("opt");
     // console.log(quest[index]);
 
+    // if statement to increase score for a right answer
     if(optionClicked == quest[index].answer) {
         $(option).addClass("correct");
         score+=5;
     }
+    // else statement to reduce time when a wrong answer is chosen
     else {
         $(option).addClass("wrong");
          timeLeft = timeLeft - 5;
     }
-
+// Scores to get updated
     $(".results span").text(score);
 
     $(".choiceBox span").attr("onclick", "");
 }
-
 
 
 // Function to show the next question
@@ -251,9 +252,6 @@ function stopQuiz() {
 // }
 
 
-// when time stops at 0 i should not be able to continue the startQuiz
-// when wrong answer is chosen minus tim
-// score to be updated when right answer is chosen
 // go back button when clicked to take me to main screen
 // clear high scores to remove the score
 

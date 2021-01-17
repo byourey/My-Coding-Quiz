@@ -104,14 +104,11 @@ const h3Btn = document.querySelector('#HS')
 const goBtn = document.querySelector('#gob')
 const clBtn = document.querySelector('#highsc')
 const userIn = document.querySelector('#name')
-// const endBtn = document.querySelector('#endgame')
-
-
 var qust = document.getElementById('con')
 
 
 // Added a timer for the quiz
-let timeLeft = 25
+let timeLeft = 30
 
 // Function get the timer to work
 function timeout() {
@@ -266,38 +263,28 @@ JSON.parse(window.localStorage.getItem('My scoreTable'))
 
 }
 
-
+// Added event listener after user enters initials
+document.getElementById('but').addEventListener("click", saveInitials)
 
 for (let i = 0; i < userScores.length; i++) {
     let scoreBoardListItem = document.createElement('li')
     scoreBoardListItem.textContent = userScores[i].myText + ":" + ' '  + userScores[i].myScore;  
 
     scoreBoardunorderedList.append(scoreBoardListItem);
-    };
-     
-    
-
-// Added event listener after user enters initials
-document.getElementById('but').addEventListener("click", saveInitials)
+    }; 
 
 
-// Function to display the initials which was submitted earlier
-// function formdata() {
-// var firstname1= document.getElementById("myText").value;
-// document.writeln("<h1>Confirmation Page</h1><br>");
-// document.writeln("" + firstname1 + "<br>");
-// }
 
 
 // Function to remove the highscores which was displayed
-function clearScores() {
-    let clearSc = document.getElementById();
-    clBtn.addEventListener("click", function() {
-        event.preventDefault();
-        localStorage.clear();
-        clearSc.remove();
-    })
-}
+// function clearScores() {
+//     let clearSc = document.getElementById('highsc');
+//     clBtn.addEventListener("click", function() {
+//         event.preventDefault();
+//         localStorage.clear();
+//         clearSc.remove();
+//     })
+// }
 
 
 

@@ -80,6 +80,14 @@ h5 {
     text-align: center;
 }
 
+#gob, #highsc {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #1da3dd;  
+    color: white;  
+}
+
 
 /* <!-- Footer Section --> */
 

@@ -11,10 +11,10 @@
         
     </head>
     <body>
-
        
 
        <!-- Starting Quiz Section -->
+      <header> 
        <div class="container">
            <div id="question-container">
            <h2>Rules for the Quiz</h2>
@@ -24,18 +24,17 @@
            <h5>If you choose the right answer, the button will light up in green</h5>
            
            </div>
-           <button id="btn_start">Start Quiz</button>
-             
+           <button id="btn_start">Start Quiz</button>             
                      
        </div>
-
+      </header> 
      
 
 
     <!-- Questions Box -->
         
-        
-    <div id="questionBox" class="hide">
+    <main>    
+     <div id="questionBox" class="hide">
         <h1 class="con"></h1>
         <div class="choiceBox">
         <span onclick="checkAnswer(this)" data-opt="1"></span>
@@ -43,41 +42,48 @@
         <span onclick="checkAnswer(this)" data-opt="3"></span>
         <span onclick="checkAnswer(this)" data-opt="4"></span>
         </div>
-    </div>
-    
-    <!-- Footer Section -->
-    <footer>
-        <button onclick="showNext()" id="next_button" class="hide">Next Question</button>
-    </footer>
+     </div>
+    </main>
 
-        
-        <!-- Timer for the quiz -->
+    <!-- Timer for the quiz -->
+    <aside> 
         <div id="timerCount">
             <!-- <h3>Seconds left: <span id="time-left">10</span></h3> -->
             <div id="time-left" class="hide">Time Left:30</div>
         </div>
-
-        <!-- Box to show the score -->
-      <div class="results">
-        <label id="lab" class="hide">Your Score: <span></span></label><br><br>
-        <p id="name" class="hide">Enter your initials below:</p>
-          <input type = "text" minlength="1" maxlength="3" id = "myText" class="hide"/>
-          <button id="but" class="hide">Submit</button> 
-          <br><br>
-      </div>
-
-          
-        <div class="showScores">
-          <h3 id="HS" class="hide">High Scores</h3>
-          
-          <form action="./index.html">
-            <button id="gob" class="hide">Go Back</button>
-          </form>           
-          <button id="highsc" class="hide">Clear HighScores</button>
-        </div>  
-
-
+    </aside>   
+         
         
+
+        <!-- Box to enter initials -->
+        <section>
+             <div class="results">
+                 <label id="lab" class="hide">Your Score: <span id="sp"></span></label><br><br>
+                 <p id="name" class="hide">Enter your initials below:</p>
+                 <input type = "text" minlength="1" maxlength="3" id = "myText" class="hide"/>
+                 <button id="but" class="hide">Submit</button> 
+                 <br><br>
+             </div>
+        </section>
+
+          
+        <!-- Box to show scores -->
+        <article>
+             <div class="showScores">
+               <h3 id="HS" class="hide">High Scores</h3>         
+          
+               <form action="./index.html">
+                <button id="gob" class="hide">Go Back</button>
+               </form><br>           
+               <button id="highsc" class="hide">Clear HighScores</button>
+             </div>  
+          <p id ="f1"></p>
+        </article> 
+        
+        <!-- Footer Section -->
+    <footer>
+        <button onclick="showNext()" id="next_button" class="hide">Next Question</button>
+    </footer>
 
 
         

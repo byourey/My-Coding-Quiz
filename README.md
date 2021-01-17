@@ -10,4 +10,4 @@
 * To my tutor, colleagues and various videos on youtube.
 
 ## Website
-![Image of website](https://github.com/byourey/My-Coding-Quiz/main/Images/)
+![Image of website](https://github.com/byourey/My-Coding-Quiz/blob/main/Images/Quiz.jpg)

@@ -60,23 +60,23 @@ let allQuestions = [
         answer: 1,
     },
     {
-        question: 'What is 10 + 2?',
+        question: 'What is the correct HTML for adding a background color?',
         option:[
-        '12',
-        '3',
-        '224',
-        '10',
+        '<background>yellow</background>',
+        '<body style="background-color:yellow;">',
+        '<body bg="yellow">',
+        '<body color:"yellow">',
         ],
-        answer: 1,
+        answer: 2,
     
     },
     {
-        question: 'What is 222 * 2?',
+        question: 'What is the correct HTML element for inserting a line break?',
         option:[
-        '2',
-        '444',
-        '224',
-        '10',
+        '<b>',
+        '<br>',
+        '<lb>',
+        '<break>',
         ],
         answer: 2,
     }
@@ -97,7 +97,7 @@ const startBtn = document.querySelector('#btn_start')
 const nextBtn = document.querySelector('#next_button')
 const questionContainerElement = document.getElementById('question-container')
 const questionBoxElement = document.querySelector('#questionBox')
-const labBoxElement = document.querySelector('#lab')
+const labBoxElement = document.getElementById('lab')
 const subBtn = document.querySelector('#but')
 const texBtn = document.querySelector('#myText')
 const h3Btn = document.querySelector('#HS')
@@ -143,8 +143,6 @@ timeLeftDisplay.addEventListener("click", stopQuiz)
 // added event listener to show initials submitted earlier
 // subBtn.addEventListener("click", formdata)
 
-// added event listener for the clear highscoresbutton
-// clBtn.addEventListener("click", empty())
 
 // Added a function for what should happen after clicking the start button
 function startQuiz() {
@@ -169,7 +167,6 @@ startQuestions(index);
 function startQuestions(i) {    
     
     $(".con").text(quest[i].question);
-    $(".questionBox").text(quest[i].question);
      $(".choiceBox span").eq(0).text(quest[i].option[0]);
      $(".choiceBox span").eq(1).text(quest[i].option[1]);
      $(".choiceBox span").eq(2).text(quest[i].option[2]);
@@ -202,7 +199,7 @@ function checkAnswer(option) {
 function showNext() {
 
     if (index >= (quest.length - 1) ) {
-        showResult();
+        // showResult();
         return;    
     }
      index++;
@@ -250,21 +247,35 @@ function endResult() {
 
 // Function save initials when user inputs them
 
-let userInitials = [];
+let userScores = [];
 
 const saveInitials = (ev)=> {
     ev.preventDefault();
-    let initials = {
-        myText: document.getElementById('myText').value
+    let newScore = {
+        myText: document.getElementById('myText').value,
+        myScore: document.getElementById('sp').innerText    
     }
-
-userInitials.push(initials);
+userScores.push(newScore);
 
 // Saving to local storage
-localStorage.setItem("My Initials", JSON.stringify(userInitials));
-window.localStorage.getItem('My Initials')
-JSON.parse(window.localStorage.getItem('My Initials'))
+localStorage.setItem("My scoreTable", JSON.stringify(userScores));
+
+window.localStorage.getItem('My scoreTable')
+JSON.parse(window.localStorage.getItem('My scoreTable'))
+// console.log(userScores[0].myText + ' ' + userScores[0].myScore)
+
 }
+
+
+
+for (let i = 0; i < userScores.length; i++) {
+    let scoreBoardListItem = document.createElement('li')
+    scoreBoardListItem.textContent = userScores[i].myText + ":" + ' '  + userScores[i].myScore;  
+
+    scoreBoardunorderedList.append(scoreBoardListItem);
+    };
+     
+    
 
 // Added event listener after user enters initials
 document.getElementById('but').addEventListener("click", saveInitials)
@@ -277,21 +288,19 @@ document.getElementById('but').addEventListener("click", saveInitials)
 // document.writeln("" + firstname1 + "<br>");
 // }
 
-window.localStorage.getItem('save');
-JSON.parse(window.localStorage.getItem('My Initials'));
-
-
 
 // Function to remove the highscores which was displayed
-// function myFunction() {
-//     var myobj = document.getElementById('highsc')
-//     myobj.remove();
-// }
+function clearScores() {
+    let clearSc = document.getElementById();
+    clBtn.addEventListener("click", function() {
+        event.preventDefault();
+        localStorage.clear();
+        clearSc.remove();
+    })
+}
 
 
 
-// clear high scores to remove the score
-// high scores to display the initials which was entered at the score section
 
 
 
